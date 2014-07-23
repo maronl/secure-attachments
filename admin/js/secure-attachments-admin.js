@@ -21,17 +21,17 @@ jQuery(document).ready(function($) {
 			beforeSend: function() {
 		        status.empty();
 		        var percentVal = '0%';
-		        bar.width(percentVal)
+		        bar.width(percentVal);
 		        percent.html(ajaxUploadDocument.loading_text + percentVal);
 		    },
 		    uploadProgress: function(event, position, total, percentComplete) {
 		        var percentVal = percentComplete + '%';
-		        bar.width(percentVal)
+		        bar.width(percentVal);
 		        percent.html(ajaxUploadDocument.loading_text + percentVal);
 		    },
 		    success: function(data) {
 		        var percentVal = '100%';
-		        bar.width(percentVal)
+		        bar.width(percentVal);
 		        percent.html(ajaxUploadDocument.loading_complete);
 		    },
 			complete: function(xhr) {
@@ -44,19 +44,19 @@ jQuery(document).ready(function($) {
 		    		html_visibility = '';
 		    		//if(data.visibility == 'sector') html_visibility = ' <a href="#" class="file-attached-permission" title="documento riservato agli utenti soci del comparto">(C)</a> ';
 		    		//if(data.visibility == 'working-group') html_visibility = ' <a href="#" class="file-attached-permission" title="documento riservato ai gruppi di utenti: ' + data.working_groups_labels + '">(G)</a> ';
-				    html = '<span class="secure-attachments-item" id="file-' + uniqueID + '" class="secure-attachments-doc">'
-				    html += '<a href="' + data.name + '" class="ntdelbutton" data-value="' + uniqueID + '" data-action="remove-attached-document"></a> '
-				    html += html_visibility
-				    html += '<a href="' + ajaxUploadDocument.getDocUrl + '?post_ID=' + data.post + '&file_name=' + data.name + '"> '
-				    html += data.title + " (" + data.size + ")"
-				    html += '</a>'
-				    html += '<br></span>'
+				    html = '<span class="secure-attachments-item" id="file-' + uniqueID + '" class="secure-attachments-doc">';
+				    html += '<a href="' + data.name + '" class="ntdelbutton" data-value="' + uniqueID + '" data-action="remove-attached-document"></a> ';
+				    html += html_visibility;
+				    html += '<a href="' + ajaxUploadDocument.getDocUrl + '?blog_ID=' + data.blog_id + '&post_ID=' + data.post + '&file_name=' + data.name + '"> ';
+				    html += data.title + " (" + data.size + ")";
+				    html += '</a>';
+				    html += '<br></span>';
 				    $(html).hide().appendTo(filelist).fadeIn();
                     $('#no-secure-attachments').hide();
                     resetSecureAttachmentsFile();
 
 		    	}else{
-		    		html = '<div class="error">' + data.msg + '</div>'
+		    		html = '<div class="error">' + data.msg + '</div>';
 		    		status.hide().html(html).fadeIn();
 		    	}
 
@@ -85,7 +85,7 @@ jQuery(document).ready(function($) {
                 }
 
 			}else{
-				html = '<div class="error">' + response.msg + '</div>'
+				html = '<div class="error">' + response.msg + '</div>';
 			    status.hide().html(html).fadeIn();
 			}
 		}, 'json');

@@ -34,7 +34,7 @@ class Secure_Attachments_Manager_Admin {
 
         wp_localize_script( 'secure-attachments-jquery-form', 'ajaxUploadDocument', array(
             'url' => '/wp-admin/admin-ajax.php',
-            'getDocUrl' => '/wp-content/plugins/acd-attach-document/acd-get-document.php',
+            'getDocUrl' => '/wp-content/plugins/secure-attachments/download-attachment.php',
             'loading_text' => __( 'loading file ... ', 'secure-attachments' ),
             'loading_text' => __( 'loading file completed', 'secure-atttachments' ),
         ) );
@@ -128,6 +128,7 @@ class Secure_Attachments_Manager_Admin {
         $res['type']  = $firstUploadedFile['type'];
         $res['size']  = round( ( $firstUploadedFile['size'] / 1024), 2 ) . " KB";
         $res['post']  = $_POST['post_ID'];
+        $res['blog_id'] = get_current_blog_id();
 
         if( $sa->saveUploadedFile( $firstUploadedFile, $file_params ) ) {
             $res['status'] = 1;

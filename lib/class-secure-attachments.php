@@ -311,6 +311,13 @@ class Secure_Attachments {
 
     }
 
+    public function userCanAccessAttachment( $filename, $password = null ) {
+        if( current_user_can( 'edit_post', $this->post_id ) ) {
+            return true;
+        }
+        return false;
+    }
+
     protected function move_uploaded_file( $source, $destination ) {
         if( ! move_uploaded_file( $source, $destination ) ) {
             return false;

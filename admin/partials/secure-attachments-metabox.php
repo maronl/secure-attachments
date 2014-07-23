@@ -33,7 +33,7 @@
             $i++;?>
             <span class="secure-attachments-item" id="file-<?php echo $i;?>">
                 <a class="ntdelbutton" href="<?php echo $doc['file-name']; ?>" data-action="remove-attached-document" data-value="<?php echo $i; ?>"></a>
-                <a href="<?php echo plugins_url() . '/acd-attach-document/acd-get-document.php?post_ID=' . $post->ID . '&file_name=' .$doc['file-name']; ?>" ><?php echo $doc['file-title']; ?> (<?php echo round( ( $doc['file-size'] / 1024), 2 ) . " KB"; ?>)</a>
+                <a href="<?php echo plugins_url() . '/secure-attachments/download-attachment.php?blog_ID=' . get_current_blog_id() . '&post_ID=' . $post->ID . '&file_name=' .$doc['file-name']; ?>" ><?php echo $doc['file-title']; ?> (<?php echo round( ( $doc['file-size'] / 1024), 2 ) . " KB"; ?>)</a>
             </span>
         <?php endforeach;?>
     <?php else: ?>
