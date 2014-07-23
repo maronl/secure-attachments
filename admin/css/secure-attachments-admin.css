@@ -1,0 +1,46 @@
+#secure-attachments-div input[type="text"],
+#secure-attachments-div textarea {
+     width: 100%;
+ }
+#secure-attachments-file-details {
+    margin-bottom: 10px;
+}
+.secure-attachments-upload-progress{
+	margin: 10px 0px 0px 0px;
+}
+.secure-attachments-upload-bar {
+	background-color: #4A8CF7;
+	border-radius: 3px 3px 3px 3px;
+	height: 4px;
+	width: 0;
+}
+.ntdelbutton {
+}
+.ntdelbutton {
+    background: url("../../images/xit.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	cursor: pointer;
+	display: block;
+	float: left;
+	height: 10px;
+	width: 10px;
+    margin:5px 5px 0 0;
+}
+.secure-attachments-item{
+    clear: both;
+    display: block;
+}
+.upload-btn{
+    float: right;
+}
+#file-attached-visibility-display{
+    font-weight: 700;
+}
+.error-file-attached {
+	margin-bottom: 5px;
+	padding: 5px;
+	background-color: #FFEBE8;
+    border: 1px solid #CC0000;
+}
+.file-attached-permission{
+	cursor: pointer;
+}
